@@ -27,3 +27,22 @@ prompt.get(['userSelection'], function (err, result) {
   console.log(`User selected: ${userSelection}`);
   console.log(`Computer selected: ${computerSelection}`);
 
+  // Decide the winner using if-else statements
+  if (userSelection === computerSelection) {
+    console.log("It's a tie");
+  } else if (
+    (userSelection === 'ROCK' && computerSelection === 'SCISSORS') ||
+    (userSelection === 'PAPER' && computerSelection === 'ROCK') ||
+    (userSelection === 'SCISSORS' && computerSelection === 'PAPER')
+  ) {
+    console.log("User Wins");
+  } else if (
+    (computerSelection === 'ROCK' && userSelection === 'SCISSORS') ||
+    (computerSelection === 'PAPER' && userSelection === 'ROCK') ||
+    (computerSelection === 'SCISSORS' && userSelection === 'PAPER')
+  ) {
+    console.log("Computer Wins");
+  } else {
+    console.log("Invalid input. Please enter ROCK, PAPER, or SCISSORS.");
+  }
+});
