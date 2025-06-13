@@ -54,40 +54,42 @@ a {
 .hero-buttons .btn-secondary:hover {
   background-color: #5a6268;
 }
-.about-page {
-  padding: 60px 20px;
-  background-color: #ffffff;
-}
-
-.about-container {
+.about-page-centered {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  max-width: 1000px;
-  margin: auto;
-  gap: 40px;
+  padding: 80px 20px;
+  background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+  text-align: center;
 }
 
-.about-photo {
-  width: 220px;
-  height: 220px;
+.centered-photo {
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid #007bff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
 }
 
-.about-info {
-  flex: 1;
-  min-width: 300px;
+.about-text {
+  max-width: 700px;
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
-.about-info h1 {
+.about-text h1 {
   font-size: 2.2rem;
   margin-bottom: 20px;
+  color: #333;
 }
 
-.about-info p {
+.about-text p {
   font-size: 1.1rem;
-  line-height: 1.6;
+  line-height: 1.7;
+  color: #444;
   margin-bottom: 16px;
 }
