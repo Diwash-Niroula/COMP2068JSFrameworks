@@ -1,68 +1,67 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
-}
 .hero-section {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 100px 20px;
+  padding: 120px 20px;
   min-height: 100vh;
-  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  background: linear-gradient(to bottom right, #e0eafc, #cfdef3);
+  color: #0d3b66;
 }
 
 .hero-content h1 {
   font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 10px;
+  font-weight: 800;
   color: #0d3b66;
+  margin-bottom: 10px;
 }
 
 .hero-content h2 {
   font-size: 1.8rem;
-  font-weight: 400;
-  color: #444;
+  font-weight: 500;
+  color: #34495e;
   margin-bottom: 20px;
 }
 
 .hero-content p {
-  font-size: 1.1rem;
-  max-width: 650px;
-  margin: 0 auto 30px auto;
+  font-size: 1.2rem;
+  max-width: 750px;
+  margin: 0 auto 30px;
   color: #333;
+  line-height: 1.6;
 }
 
 .hero-buttons .btn {
-  display: inline-block;
   padding: 12px 28px;
-  border-radius: 6px;
-  margin: 0 12px;
-  font-weight: 600;
   font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  margin: 0 10px;
   transition: all 0.3s ease-in-out;
+}
+
+.hero-buttons .btn-primary {
   background-color: #007bff;
-  color: #fff;
+  color: white;
   border: none;
 }
 
-.hero-buttons .btn-secondary {
-  background-color: #6c757d;
-}
-
-.hero-buttons .btn:hover {
+.hero-buttons .btn-primary:hover {
   background-color: #0056b3;
   transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero-buttons .btn-secondary {
+  background-color: #e2e6ea;
+  color: #333;
+  border: 1px solid #ced4da;
 }
 
 .hero-buttons .btn-secondary:hover {
-  background-color: #5a6268;
+  background-color: #d6d8db;
+  transform: scale(1.05);
 }
+
 .about-page {
   padding: 80px 0;
   background: linear-gradient(to bottom, #f9f9f9, #e9ecef);
