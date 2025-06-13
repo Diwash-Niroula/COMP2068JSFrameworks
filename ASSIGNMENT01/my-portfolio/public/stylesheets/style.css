@@ -189,3 +189,33 @@ a {
     margin-top: 15px;
   }
 }
+.contact-page {
+  background: linear-gradient(to bottom, #fefefe, #e9ecef);
+}
+
+.contact-page form {
+  max-width: 700px;
+  margin: auto;
+}
+
+.contact-page .form-label {
+  font-weight: 600;
+  color: #333;
+}
+
+.contact-page input,
+.contact-page textarea {
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.contact-page button.btn {
+  padding: 10px 24px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-page button.btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.03);
+}
