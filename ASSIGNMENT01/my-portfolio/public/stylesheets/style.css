@@ -1,33 +1,51 @@
 .hero-section {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   padding: 120px 20px;
   min-height: 100vh;
-  background: linear-gradient(to bottom right, #e0eafc, #cfdef3);
-  color: #0d3b66;
+  background: url('/images/hero-bg.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
 }
 
 .hero-content h1 {
   font-size: 3.5rem;
   font-weight: 800;
-  color: #0d3b66;
   margin-bottom: 10px;
+  color: #ffffff;
 }
 
 .hero-content h2 {
   font-size: 1.8rem;
   font-weight: 500;
-  color: #34495e;
+  color: #dbe9ff;
   margin-bottom: 20px;
 }
 
 .hero-content p {
   font-size: 1.2rem;
-  max-width: 750px;
+  max-width: 700px;
   margin: 0 auto 30px;
-  color: #333;
+  color: #f2f2f2;
   line-height: 1.6;
 }
 
@@ -52,15 +70,16 @@
 }
 
 .hero-buttons .btn-secondary {
-  background-color: #e2e6ea;
-  color: #333;
-  border: 1px solid #ced4da;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  color: white;
 }
 
 .hero-buttons .btn-secondary:hover {
-  background-color: #d6d8db;
+  background-color: rgba(255, 255, 255, 0.1);
   transform: scale(1.05);
 }
+
 
 .about-page {
   padding: 80px 0;
