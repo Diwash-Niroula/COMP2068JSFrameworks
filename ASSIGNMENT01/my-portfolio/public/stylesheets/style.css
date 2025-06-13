@@ -123,11 +123,14 @@ a {
 }
 
 .card-img-top {
-  max-height: 400px;
-  object-fit: cover;
+  max-height: 300px;
+  object-fit: contain; 
   width: 100%;
+  padding: 15px; 
+  background-color: #f8f9fa; 
   border-bottom: 1px solid #dee2e6;
 }
+
 
 .card-body {
   padding: 30px;
