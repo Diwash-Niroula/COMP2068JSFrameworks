@@ -1,0 +1,25 @@
+<section class="py-5 bg-light border-bottom">
+  <div class="container">
+    <div class="row align-items-center gy-4">
+      <div class="col-md-6">
+        <h1 class="display-5 fw-bold text-success">Plant Care Manager</h1>
+        <p class="lead text-muted">
+          Track your indoor plants, watering schedule, and sunlight needs. Browse the public directory or
+          sign in to add and manage your own plants.
+        </p>
+        <div class="d-flex gap-2">
+          <a href="/plants" class="btn btn-success btn-lg">Browse Plants</a>
+          {{#if user}}
+            <a href="/plants/add" class="btn btn-outline-success btn-lg">Add a Plant</a>
+          {{else}}
+            <a href="/auth/login" class="btn btn-outline-success btn-lg">Login</a>
+          {{/if}}
+        </div>
+      </div>
+      <div class="col-md-6">
+        <img src="https://media.istockphoto.com/id/1419410282/photo/silent-forest-in-spring-with-beautiful-bright-sun-rays.webp?a=1&b=1&s=612x612&w=0&k=20&c=FyF2VmGR625XAlQUs5JEhks0FeMTPElEXNIo2T-rDPA="
+             class="img-fluid rounded shadow" alt="Plants">
+      </div>
+    </div>
+  </div>
+</section>
