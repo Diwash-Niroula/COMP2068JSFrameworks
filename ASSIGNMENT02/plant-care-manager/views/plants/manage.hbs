@@ -1,0 +1,72 @@
+<section class="py-5">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h1 class="h3 mb-0">My Plants</h1>
+      <a href="/plants/add" class="btn btn-success">Add Plant</a>
+    </div>
+
+    {{#if success}}<div class="alert alert-success">{{success}}</div>{{/if}}
+    {{#if error}}<div class="alert alert-danger">{{error}}</div>{{/if}}
+
+    {{#if plants.length}}
+      <div class="table-responsive">
+        <table class="table table-hover align-middle">
+          <thead>
+            <tr>
+              <th>Plant</th>
+              <th class="d-none d-md-table-cell">Water</th>
+              <th class="d-none d-md-table-cell">Sunlight</th>
+              <th style="width:160px;"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each plants}}
+              <tr>
+                <td>
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="{{#if imageUrl}}{{imageUrl}}{{else}}https://via.placeholder.com/64x48{{/if}}"
+                         style="width:64px;height:48px;object-fit:cover;border-radius:8px;border:1px solid #eee">
+                    <div>
+                      <div class="fw-semibold">{{name}}</div>
+                      <div class="text-muted small">{{species}}</div>
+                    </div>
+                  </div>
+                </td>
+                <td class="text-muted d-none d-md-table-cell">{{wateringFrequency}}</td>
+                <td class="text-muted d-none d-md-table-cell">{{sunlight}}</td>
+                <td class="text-end">
+                  <a href="/plants/{{_id}}/edit" class="btn btn-outline-secondary btn-sm">Edit</a>
+                  <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#del-{{_id}}">Delete</button>
+
+                  <!-- Delete confirm modal -->
+                  <div class="modal fade" id="del-{{_id}}" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Delete Plant</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                          Delete <strong>{{name}}</strong>? This cannot be undone.
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                          <form method="post" action="/plants/{{_id}}/delete">
+                            <button class="btn btn-danger">Delete</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /modal -->
+                </td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    {{else}}
+      <div class="alert alert-light border">You haven’t added any plants yet.</div>
+    {{/if}}
+  </div>
+</section>

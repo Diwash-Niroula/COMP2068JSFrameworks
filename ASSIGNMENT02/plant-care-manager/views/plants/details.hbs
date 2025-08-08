@@ -1,0 +1,80 @@
+<section class="py-6 bg-gray-50">
+  <div class="container mx-auto px-4 max-w-4xl bg-white rounded-lg shadow p-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <div class="flex items-center justify-center bg-gray-100 rounded-lg overflow-hidden h-80">
+        {{#if plant.imageUrl}}
+          <img
+            src="{{plant.imageUrl}}"
+            alt="{{plant.name}}"
+            class="object-cover w-full h-full"
+            onerror="this.onerror=null;this.src='https://via.placeholder.com/1000x700?text=Image+not+available';"
+          />
+        {{else}}
+          <span class="text-gray-400">No Image Available</span>
+        {{/if}}
+      </div>
+
+      <div>
+        {{#if formMode}}
+          <h1 class="text-3xl font-bold text-green-700 mb-4">{{title}}</h1>
+
+          <form method="post" action="{{#if plant._id}}/plants/{{plant._id}}/edit{{else}}/plants/add{{/if}}" class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium mb-1">Name</label>
+              <input name="name" value="{{plant.name}}" class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" required>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-1">Species</label>
+              <input name="species" value="{{plant.species}}" class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium mb-1">Watering Frequency</label>
+                <input name="wateringFrequency" value="{{plant.wateringFrequency}}" placeholder="Once a week" class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-1">Sunlight</label>
+                <input name="sunlight" value="{{plant.sunlight}}" placeholder="Bright indirect light" class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-1">Image URL</label>
+              <input name="imageUrl" value="{{plant.imageUrl}}" placeholder="https://..." class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500">
+            </div>
+
+            <div class="mt-4 flex gap-2">
+              <a href="/plants" class="inline-block px-4 py-2 rounded-md border hover:bg-gray-50">Cancel</a>
+              <button class="px-4 py-2 rounded-md bg-green-600 text-white hover:bg-green-700">
+                {{#if plant._id}}Update{{else}}Add{{/if}} Plant
+              </button>
+            </div>
+          </form>
+
+        {{else}}
+          <h1 class="text-3xl font-bold text-green-700 mb-2">{{plant.name}}</h1>
+          <p class="text-gray-600 text-lg mb-4">{{plant.species}}</p>
+
+          <div class="space-y-2 text-gray-700">
+            <p><strong>Watering Frequency:</strong> {{plant.wateringFrequency}}</p>
+            <p><strong>Sunlight Needs:</strong> {{plant.sunlight}}</p>
+          </div>
+
+          <div class="mt-6 flex items-center gap-3">
+            <a href="/plants" class="inline-block bg-green-600 text-white px-5 py-2 rounded-md hover:bg-green-700 transition">
+              ← Back to Plants
+            </a>
+            {{#if user}}
+              <a href="/plants/{{plant._id}}/edit" class="inline-block border px-4 py-2 rounded-md hover:bg-gray-50">Edit</a>
+              <a href="/plants/{{plant._id}}/delete" class="inline-block border border-red-300 text-red-600 px-4 py-2 rounded-md hover:bg-red-50">Delete</a>
+            {{/if}}
+          </div>
+        {{/if}}
+      </div>
+
+    </div>
+  </div>
+</section>

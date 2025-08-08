@@ -1,0 +1,16 @@
+<section class="py-5">
+  <div class="container" style="max-width:640px">
+    <h1 class="h4 mb-3">Delete Plant</h1>
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <p>Delete <strong>{{plant.name}}</strong>? This cannot be undone.</p>
+        <div class="d-flex gap-2">
+          <a href="/plants" class="btn btn-outline-secondary">Cancel</a>
+          <form method="post" action="/plants/{{plant._id}}/delete">
+            <button class="btn btn-danger">Delete</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
