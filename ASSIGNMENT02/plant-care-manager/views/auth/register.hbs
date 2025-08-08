@@ -1,0 +1,22 @@
+<section class="py-5">
+  <div class="container" style="max-width: 520px">
+    <h1 class="h3 mb-4">Create account</h1>
+
+    {{#if error}}<div class="alert alert-danger">{{error}}</div>{{/if}}
+    {{#if success}}<div class="alert alert-success">{{success}}</div>{{/if}}
+
+    <form action="/auth/register" method="post">
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input name="username" class="form-control" required />
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input name="password" type="password" class="form-control" required />
+      </div>
+      <button class="btn btn-success w-100">Register</button>
+    </form>
+
+    <p class="mt-4 text-muted">Already have an account? <a href="/auth/login">Login</a></p>
+  </div>
+</section>
